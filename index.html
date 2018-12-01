@@ -7,10 +7,12 @@
 </head>
 
 <body>
+  <!--Header-->
   <header class="main-header">
     <nav class="main-navigation">
       <a class="main-header-logo">
-        <img src="img/index.logo.svg" width="" height="" alt="Логотип компании Нёрдс"></a>
+        <img src="img/nerds-logo.svg" width="160" height="65" alt="Логотип веб-студии Нёрдз">
+      </a>
       <ul class="site-navigation">
         <li><a href="#"> Студия</a></li>
         <li><a href="#"> Клиенты</a></li>
@@ -18,15 +20,17 @@
         <li><a href="#"> Контакты</a></li>
       </ul>
     </nav>
-
   </header>
   <main>
+    <!--Content-->
     <h1 class="visually-hidden">Веб-студия Нёрдз</h1>
+    <!--Slider-->
     <section class="slider">
     </section>
+    <!--Services block-->
     <section class="types-services">
       <div class="specific">
-        <div class="specific-service">
+        <section class="specific-service">
           <div class="wrapper">
             <img src="img/illustration-1.jpg" width="300" height="146" alt="Сайты">
           </div>
@@ -34,17 +38,16 @@
           <p class="specific-service-text">Мир никогда не будет прежним
             после того как увидит ваш сайт!</p>
           <a href="#">Заказать</a>
-        </div>
-        <div class="specific-service">
+        </section>
+        <section class="specific-service">
           <div class="wrapper">
             <img src="img/illustration-2.jpg" width="300" height="146" alt="Приложения">
           </div>
           <h3 class="specific-service-title">Приложения</h3>
           <p class="specific-service-text">Покорите топ-10 приложений в AppStore и Google Play</p>
           <a href="#">Заказать</a>
-
-        </div>
-        <div class="specific-service">
+        </section>
+        <section class="specific-service">
           <div class="wrapper">
             <img src="img/illustration-3.jpg" width="300" height="146" alt="Презентации">
           </div>
@@ -52,50 +55,71 @@
           <p class="specific-service-text">Вы даже не подозреваете,
             насколько вы изумительны!</p>
           <a href="#">Заказать</a>
-
-        </div>
+        </section>
       </div>
     </section>
+    <!-- Info block -->
     <section class="info">
 
     </section>
+    <!-- References block -->
     <section class="references">
-
+      <div class="col">
+        <a href="http://htmlacademy.ru/" class="reference-img"><img src="img/logo-1.png.png" alt="HTML Academy"></a>
+      </div>
+      <div class="col">
+        <a href="#" class="reference-img"><img src="img/logo-2.png.png" alt="Barbershop Borodinski"></a>
+      </div>
+      <div class="col">
+        <a href="#" class="reference-img"><img src="img/logo-3.png.png" alt="Pink"></a>
+      </div>
+      <div class="col">
+        <a href="#" class="reference-img"><img src="img/logo-4.png.png" alt="Mishka"></a>
+      </div>
     </section>
-
-
   </main>
+  <!--Map & Contacts-->
   <div class="map-wrapper">
     <div class="map">
       <img src="img/map.jpg" width="1440" height="416">
     </div>
-    <div class="range">
-      <div class="contacts">
-        <p class="contacts-title"><span>NЁRDS DESIGN STUDIO</span>
-          <p class="contacts-address">191186, Санкт-Петербург,
-            ул. Б. Конюшенная, д. 19/8</p>
-          <p class="contacts-phone">тел. +7 (812) 275-75-75</p>
-          <a href="#" class="btn contacts-btn">Напишите нам</a>
-      </div>
+    <div class="contacts">
+      <p class="contacts-title"><span>NЁRDS DESIGN STUDIO</span>
+        <p class="contacts-address">191186, Санкт-Петербург,
+          ул. Б. Конюшенная, д. 19/8</p>
+        <p class="contacts-phone">тел. +7 (812) 275-75-75</p>
+        <a href="#" class="btn contacts-btn">Напишите нам</a>
     </div>
   </div>
-
-
-
+  <!-- Feedback form -->
+  <form class="feedback-form" method="GET" action="#">
+    <h2 class="write">Напишите нам</h2>
+    <p class="name">
+      <label for="input-name">Ваше имя:</label><input type="text" id="input-name" name="feedback-name" placeholder="Имя Фамилия">
+    </p>
+    <p class="e-mail">
+      <label for="input-e-mail">Ваш e-mail:</label><input type="email" id="input-e-mail" name="feedback-e-mail"
+        placeholder="email@example.com">
+    </p>
+    <p class="message-text">
+      <label for="input-message">Текст письма:</label><textarea id="input-message" name="feedback-message" placeholder="В свободной форме"></textarea>
+    </p>
+    <div class="form-btns">
+      <input type="submit" id="input-submit" name="feedback-submit" class="btn feedback-submit" value="Отправить">
+    </div>
+  </form>
 </body>
 <footer>
   <div class="container">
-    <div class="range">
-      <div class="footer-social">
-        <ul>
-          <li><a class="social-button" href="#">Вконтакте</a></li>
-          <li><a class="social-button" href="#">Фейсбук</a></li>
-          <li><a class="social-button" href="#">Инстаграм</a></li>
-        </ul>
-      </div>
-      <span> Давайте дружить, это выгодно!</span>
-      <p class="footer-sale">Скидка 10% для друзей из социальных сетей.</p>
-    </div>
+    <section class="footer-social">
+      <ul>
+        <li><a class="social-button" href="https://vk.com/"><img src="img/vk-icon.svg" alt="В контакте"></a></li>
+        <li><a class="social-button" href="https://www.facebook.com/"><img src="img//fb-icon.svg" alt="Фейсбук"></a></li>
+        <li><a class="social-button" href="https://instagram.com/"><img src="img/insta-icon.svg" alt="Инстаграм"></a></li>
+      </ul>
+    </section>
+    <span> Давайте дружить, это выгодно!</span>
+    <p class="footer-sale">Скидка 10% для друзей из социальных сетей.</p>
   </div>
 </footer>
 
