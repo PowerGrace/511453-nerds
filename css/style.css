@@ -1,0 +1,152 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #000;
+}
+a {
+    text-decoration: none;
+}
+.site-navigation,
+.user-navigation {
+  list-style: none;
+}
+.main-header {
+    background-color: #eeee;
+}
+
+.site-navigation a,
+.icon-basket {
+  color: #000;
+  text-transform: uppercase;
+}
+.site-navigation a:hover,
+.site-navigation a:focus,
+.icon-basket:hover,
+.icon-basket:focus {
+    color: #fb565a;
+}
+.site-navigation a:active,
+.icon-basket:active {
+    color: #a6a6a6;
+}
+.site-navigation-current a {
+    text-decoration: none;
+    border-bottom: 2px solid #fb565a;
+}
+.specific-service {
+    text-align: left;
+}
+.specific-service-title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.main-header-logo svg:hover,
+.main-header-logo svg:focus {
+     fill: #303030;
+}
+.main-header-logo svg:active {
+    fill: #a6a6a6;
+}
+.button {
+    display: inline-block;
+    width: 260px;
+    height: 50px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 3px;
+    text-align: center; 
+}
+.service-sites {
+    background: #fb565a;
+    width: 160px;
+    height: 50px;
+}
+.service-sites:hover,
+.service-sites:focus {
+    background: #e74246;
+}
+.service-sites:active {
+    color: #e26f72;
+    background: #d7373b;
+}
+.service-apps {
+    background: #00ca74;
+    width: 160px;
+    height: 50px;
+}
+.service-apps:hover,
+.service-apps:focus {
+    background: #00bc6c;
+}
+.service-apps:active {
+    background: #00aa62;
+    color: #4dc491;
+}
+.service-presentations {
+    background: #efc84a;
+    width: 160px;
+    height: 50px;
+}
+.service-presentations:hover,
+.service-presentations:focus {
+    background: #eab534;
+}
+.service-presentations:active {
+    background: #e5a722;
+    color: #edc265;
+}
+.feedback-form {
+    font-size: inherit;
+    background-color: #fff;
+    width: 960px;
+    height: 590px;
+}
+.feedback-form label{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+.feedback-form input,
+.feedback-form textarea {
+    border: 2px solid #d7dcde;
+    font-size: inherit;
+    line-height: 18px;
+    color: #a1a1a1;
+}
+.contacts-btn,
+.button-submit  {
+    background-color: #fb565a;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.contacts span {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+}
+.contacts p {
+    font-size: inherit;
+    line-height: 18px;
+}
+.specific-service p {
+    font-size: inherit;
+    line-height: 24px;
+}
+.container span {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: bold;
+}
+.container p {
+    font-size: inherit;
+    line-height: 22px;
+}
