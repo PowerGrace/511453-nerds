@@ -1,42 +1,60 @@
+
 body{
     margin: 0;
     padding: 0;
+    width: 1440px; 
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
     color: #000;
+    
+
 }
 a {
     text-decoration: none;
 }
+h1 {
+    margin: 0px;
+}
 .site-navigation,
-.user-navigation {
+.icon-basket,
+.footer-social ul,
+.sorting-list {
   list-style: none;
 }
 .main-header {
     background-color: #eeee;
+    padding-top: 49px;
+    padding-bottom: 18px;
 }
 
 .site-navigation a,
-.icon-basket {
+.icon-basket a {
   color: #000;
   text-transform: uppercase;
 }
 .site-navigation a:hover,
 .site-navigation a:focus,
-.icon-basket:hover,
-.icon-basket:focus {
+.icon-basket a:hover,
+.icon-basket a:focus {
     color: #fb565a;
 }
 .site-navigation a:active,
-.icon-basket:active {
+.icon-basket a:active {
     color: #a6a6a6;
 }
 .site-navigation-current a {
     text-decoration: none;
     border-bottom: 2px solid #fb565a;
 }
+.header-title {
+    text-align: center;
+    padding-bottom: 119px;
+    padding-top: 60px;
+    background: #eeeeee;
+}
+
 .specific-service {
     text-align: left;
 }
@@ -48,14 +66,14 @@ a {
 }
 .main-header-logo svg:hover,
 .main-header-logo svg:focus {
-     fill: #303030;
+    fill: #303030;
 }
 .main-header-logo svg:active {
     fill: #a6a6a6;
 }
 .button {
     display: inline-block;
-    width: 260px;
+    /*width: 260px;*/
     height: 50px;
     color: white;
     text-transform: uppercase;
@@ -64,16 +82,22 @@ a {
     border-radius: 3px;
     text-align: center; 
 }
+.contacts-btn {
+    width: 219px;
+}
 .service-sites {
     background: #fb565a;
     width: 160px;
     height: 50px;
 }
 .service-sites:hover,
-.service-sites:focus {
+.service-sites:focus,
+.item-price:hover,
+.item-price:focus {
     background: #e74246;
 }
-.service-sites:active {
+.service-sites:active,
+.item-price:active {
     color: #e26f72;
     background: #d7373b;
 }
@@ -104,10 +128,15 @@ a {
     color: #edc265;
 }
 .feedback-form {
+    display: none;
+    position: absolute;
     font-size: inherit;
     background-color: #fff;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
     width: 960px;
     height: 590px;
+    left: 240px;
+    top: 1800px;
 }
 .feedback-form label{
     font-size: 16px;
@@ -127,26 +156,216 @@ a {
     background-color: #fb565a;
     white-space: nowrap;
     overflow: hidden;
+
 }
-.contacts span {
+.item-header svg:hover,
+.item-header svg:focus {
+    fill: #4d4d4d;
+}
+.contacts-title {
     font-size: 18px;
     line-height: 30px;
-    font-weight: 700;
+    font-weight: bold;
+    color: #000;
 }
-.contacts p {
+.contacts-address,
+.contacts-phone {
     font-size: inherit;
     line-height: 18px;
+    color: #666666;
 }
 .specific-service p {
     font-size: inherit;
     line-height: 24px;
+    color: #283136;
 }
-.container span {
+.container-footer span {
     font-size: 36px;
     line-height: 36px;
     font-weight: bold;
+    
 }
-.container p {
-    font-size: inherit;
+.container-footer p {
+    font-size: 16px;
     line-height: 22px;
+    color: #444444;
+}
+.item-price {
+    background: #fb565a;
+    width: 200px;
+}
+
+.item-title {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.item-text {
+    font-size: 16px;
+    line-height: 18px;
+    color: #666666;
+}
+.container-header  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800px;
+}
+.site-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 440px;
+    padding: 0;
+}
+.icon-basket {
+    padding: 0;
+}
+.main-navigation {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 1440px;
+    height: 65px;
+    justify-content: space-around;
+}
+.types-services .specific {
+    display: flex;
+    height: 348px;
+    width: 1099px;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.types-services {
+    padding-left: 140px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    background: white;
+}
+.slider {
+    height: 413px;
+    background: #eeeeee;
+}
+.info {
+    padding-top: 110px;
+    height: 528px;
+    width: 1440px;
+    background: white;
+
+}
+.references {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1090px;
+    height: 68px;
+    padding: 50px 163px 50px 171px;
+}
+.references-wrapper {
+    background: white;
+}
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+.contacts {
+    width: 319px;
+    height: 308px;
+    position: absolute;
+    background: white;
+    left: 141px; 
+    bottom: 60px;
+
+}
+.contacts-wrapper {
+    padding: 53px 50px 47px 50px;
+}
+.marker {
+    position: absolute;
+    right: 390px;
+    bottom: 140px;
+}
+.map-wrapper {
+    display: block;
+    position: relative;
+}
+.container-footer {
+    background: 
+}
+.footer-social ul {
+    margin: 0px;
+}
+.container-footer {
+    display: flex;
+    flex-direction: row;
+    height: 218px;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+}
+.footer-social ul {
+    display: flex;
+    flex-direction: row;
+    width: 261px;
+    height: 79px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+}
+
+.shop-title {
+     color: #000;
+     font-size: 55px;
+     line-height: 55px;
+
+}
+.filter {
+    width: 259px;
+    height: 510px;
+}
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 760px;
+}
+.item-card {
+    width: 360px;
+    padding-bottom: 33px;
+}
+.item-description {
+    display: none;
+}
+.item-header {
+    width: 360px;
+    height: 40px;
+}
+.container-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: white;
+}
+.sorting-items-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.sorting {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.sorting-list {
+    display: flex;
+    flex-direction: row;
+    width: 272px;
+    justify-content: space-between;
+    padding-left: 0px;
+
 }

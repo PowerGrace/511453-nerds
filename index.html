@@ -25,13 +25,19 @@
           <path d="m83.091 44.992c-1.597 2.507-3.903 4.384-5.966 5.059-2.398.73-5.185.056-5.185-2.698 0-1.011.892-3.372 3.624-4.721-.168-1.911-1.394-2.417-2.286-1.686-3.345 2.586-7.417 12.25-6.356 19.221.055.168.055.337.055.506.168.617.335 1.237.558 1.854.557 1.574-4.907 3.316-7.973.956-1.059-.788-1.617-6.97-1.617-17.704 0-8.824 1.951-16.636 3.011-16.917 6.412-1.743 10.147 1.292 8.14 7.249-1.171 3.373-2.23 6.801-2.843 10.399 2.453-6.688 6.523-12.872 9.812-14.501 5.856-2.923 10.092.956 8.867 7.813-.056.11-.112.393-.112.449-.056.562-.566 2.302-.39 1.741-.516 1.645-.892 2.277-1.339 2.98z" />
           <path d="m113.207 26.161c-.445 2.304-.836 4.833-1.115 7.531-1.059 10.06-.612 18.996.613 22.986.726 2.137 3.457 4.946 6.078 2.023 2.843-3.203 5.967-1.349 2.174 2.416-2.34 2.305-6.689 3.878-11.039 3.428-3.123-.393-5.018-2.415-6.134-5.505-.444.898-.947 1.685-1.56 2.302-2.119 2.193-4.685 3.43-7.974 3.092-6.637-.73-10.538-7.923-8.699-18.153 1.952-10.791 11.319-14.725 16.728-11.857.112-1.349.223-2.699.335-4.104.055-.281.055-.562.11-.843-1.561.338-3.233.675-4.962.956-23.975 3.99-15.722-15.569-9.868-20.683 6.636-5.733 7.36-1.855 5.297-.562-3.68 2.36-5.297 15.905 5.241 15.905 1.729 0 3.346-.112 4.962-.281 3.291-18.322 13.271-27.203 21.356-24.28 8.976 3.26 8.029 17.535-11.543 25.629zm-10.928 24.393c-.224-3.542-.224-7.532-.167-11.636 0-.506.056-1.011.056-1.461-3.346-1.518-6.635 3.653-7.473 10.792-.946 8.373 2.788 12.813 4.908 10.791 1.617-1.631 2.453-6.803 2.676-8.486zm24.086-43.165c-1.784-2.642-8.307.562-12.098 14.332 9.535-4.554 13.326-12.422 12.098-14.332z" /></svg>
       </a>
-      <ul class="site-navigation">
-        <li><a href="#"> Студия</a></li>
-        <li><a href="#"> Клиенты</a></li>
-        <li><a href="catalog.html"> Магазин</a></li>
-        <li><a href="#"> Контакты</a></li>
-      </ul>
-      <a class="icon-basket" href="#">Корзина</a>
+      <div class="main-navigation-wrapper">
+        <div class="container-header">
+          <ul class="site-navigation">
+            <li><a href="#"> Студия</a></li>
+            <li><a href="#"> Клиенты</a></li>
+            <li><a href="catalog.html"> Магазин</a></li>
+            <li><a href="#"> Контакты</a></li>
+          </ul>
+          <ul class="icon-basket">
+            <li><a href="#">Корзина</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
   <main>
@@ -77,34 +83,42 @@
 
     </section>
     <!-- References block -->
-    <section class="references">
-      <div class="col">
-        <a href="http://htmlacademy.ru/" class="reference-img"><img src="img/logo-1.png.png" alt="HTML Academy"></a>
-      </div>
-      <div class="col">
-        <a href="#" class="reference-img"><img src="img/logo-2.png.png" alt="Barbershop Borodinski"></a>
-      </div>
-      <div class="col">
-        <a href="#" class="reference-img"><img src="img/logo-3.png.png" alt="Pink"></a>
-      </div>
-      <div class="col">
-        <a href="#" class="reference-img"><img src="img/logo-4.png.png" alt="Mishka"></a>
-      </div>
-    </section>
+    <div class="references-wrapper">
+      <section class="references">
+        <div class="col">
+          <a href="http://htmlacademy.ru/" class="reference-img"><img src="img/logo-1.png" alt="HTML Academy"></a>
+        </div>
+        <div class="col">
+          <a href="#" class="reference-img"><img src="img/logo-2.png" alt="Barbershop Borodinski"></a>
+        </div>
+        <div class="col">
+          <a href="#" class="reference-img"><img src="img/logo-3.png" alt="Pink"></a>
+        </div>
+        <div class="col">
+          <a href="#" class="reference-img"><img src="img/logo-4.png" alt="Mishka"></a>
+        </div>
+      </section>
+    </div>
   </main>
   <!--Map & Contacts-->
-  <div class="map-wrapper">
+  <section class="map-wrapper">
     <div class="map">
       <img src="img/map.jpg" width="1440" height="416" alt="Схема проезда">
     </div>
     <div class="contacts">
-      <span>NЁRDS DESIGN STUDIO</span>
-      <p>191186, Санкт-Петербург,
-        ул. Б. Конюшенная, д. 19/8</p>
-      <p>тел. +7 (812) 275-75-75</p>
-      <a href="#" class="contacts-btn button">Напишите нам</a>
+      <div class="contacts-wrapper">
+        <p class="contacts-title">NЁRDS DESIGN STUDIO</p>
+        <p class="contacts-address">191186, Санкт-Петербург,
+          ул. Б. Конюшенная, д. 19/8</p>
+        <p class="contacts-phone">тел. +7 (812) 275-75-75</p>
+        <a href="#" class="contacts-btn button">Напишите нам</a>
+      </div>
     </div>
-  </div>
+    <div class="marker">
+      <img src="img/map-marker.png" width="231" height="190" alt="Нёрдз на карте">
+    </div>
+    </div>
+  </section>
   <!-- Feedback form -->
   <form class="feedback-form" method="GET" action="#">
     <h2 class="write">Напишите нам</h2>
@@ -124,7 +138,7 @@
   </form>
   <!--Footer-->
   <footer>
-    <div class="container">
+    <div class="container-footer">
       <article class="footer-social">
         <ul>
           <li><a class="social-button" href="https://vk.com/"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="15"
@@ -138,10 +152,13 @@
                 <path fill="#FFF" d="M18 0H3C1.35 0 0 1.35 0 3v15c0 1.65 1.35 3 3 3h15c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zm-7.5 7c1.93 0 3.5 1.57 3.5 3.5S12.43 14 10.5 14 7 12.43 7 10.5 8.57 7 10.5 7zM18 18H3V9h1.181A6.504 6.504 0 0 0 4 10.5a6.5 6.5 0 1 0 13 0 6.45 6.45 0 0 0-.181-1.5H18v9zm0-11h-4V3h4v4z" /></svg></a></li>
         </ul>
       </article>
-      <span> Давайте дружить, это выгодно!</span>
-      <p class="footer-sale">Скидка 10% для друзей из социальных сетей.</p>
+      <div class="friendship">
+        <span> Давайте дружить, это выгодно!</span>
+        <p>Скидка 10% для друзей из социальных сетей.</p>
+      </div>
     </div>
   </footer>
+
 </body>
 
 </html>
