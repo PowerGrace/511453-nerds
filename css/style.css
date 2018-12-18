@@ -2,14 +2,12 @@
 body{
     margin: 0;
     padding: 0;
-    width: 1440px; 
+    min-width: 1200px; 
     font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
     color: #000;
-    
-
 }
 a {
     text-decoration: none;
@@ -17,11 +15,66 @@ a {
 h1 {
     margin: 0px;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 .site-navigation,
 .icon-basket,
 .footer-social ul,
 .sorting-list {
   list-style: none;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.slider-item {
+    display: none;
+    padding: 78px 0 80px 0;
+}
+.slider-item:nth-child(1) {
+    display: block;
+  }  
+.slider-item:nth-child(1) {
+    background-image: url("../img/slide1.png");
+    background-repeat: no-repeat;
+    background-position: 93% 18px;
+}
+.slider-item:nth-child(2) {
+    background-image: url("../img/slide2.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+  }
+  
+  .slider-item:nth-child(3) {
+    background-image: url("../img/slide3.png");
+    background-repeat: no-repeat;
+    background-position: 100% 20px;
+  }
+.slider {
+    position: relative;
+    background: #eeeeee;
+}
+.slider-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.slider-item h3 {
+    max-width: 600px;
+    margin: 0;
+    margin-bottom: 27px;
+    font-size: 55px;
+    line-height: 55px;
+    font-weight: 500;
+}
+.slider-item p {
+    max-width: 430px;
+    margin: 0;
+    margin-bottom: 38px;
 }
 .main-header {
     background-color: #eeee;
@@ -71,16 +124,82 @@ h1 {
 .main-header-logo svg:active {
     fill: #a6a6a6;
 }
+.slider-controls {
+    position: absolute;
+    left: 50%;
+    bottom: 104px;
+    z-index: 100;
+    
+    width: 160px;
+    height: 18px;
+  
+    text-align: center;
+    font-size: 0;
+    transform: translateX(-50%);
+  }
+  
+.slider-controls i {
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 8px;
+    
+}
+
+.slider-controls i::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.slider-controls .active::before { 
+    content: "";
+
+    position: absolute;
+    left: 39%;
+    top: 39%;
+    z-index: 2;
+  
+    width: 4px;
+    height: 4px;
+  
+    background-color: inherit;
+    border: 2px solid #c1c1c1;
+    border-radius: 50%;
+  }   
+
 .button {
     display: inline-block;
-    /*width: 260px;*/
     height: 50px;
     color: white;
     text-transform: uppercase;
     font-size: 16px;
     line-height: 50px;
     border-radius: 3px;
-    text-align: center; 
+    text-align: center;
+    border: none; 
+}
+.slider-item-button {
+    background-color: #fb565a;
+    width: 240px;
+}
+.slider-item-button:hover,
+.slider-item-button:focus {
+    background-color: #e74246;
+}
+.slider-item-button:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #d7373b;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
 }
 .contacts-btn {
     width: 219px;
@@ -98,8 +217,9 @@ h1 {
 }
 .service-sites:active,
 .item-price:active {
-    color: #e26f72;
+    color: rgba(255, 255, 255, 0.3);
     background: #d7373b;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
 }
 .service-apps {
     background: #00ca74;
@@ -112,7 +232,8 @@ h1 {
 }
 .service-apps:active {
     background: #00aa62;
-    color: #4dc491;
+    color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
 }
 .service-presentations {
     background: #efc84a;
@@ -125,7 +246,8 @@ h1 {
 }
 .service-presentations:active {
     background: #e5a722;
-    color: #edc265;
+    color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
 }
 .feedback-form {
     display: none;
@@ -216,6 +338,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 440px;
     padding: 0;
 }
@@ -245,8 +368,8 @@ h1 {
     background: white;
 }
 .slider {
-    height: 413px;
-    background: #eeeeee;
+   /* height: 413px;*/
+    
 }
 .info {
     padding-top: 110px;
