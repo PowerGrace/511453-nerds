@@ -9,6 +9,13 @@ body{
     font-weight: 400;
     color: #000;
 }
+.wrapper { /* Центровщик*/
+    box-sizing: border-box;
+    position: relative;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+  }
 a {
     text-decoration: none;
 }
@@ -22,7 +29,9 @@ img {
 .site-navigation,
 .icon-basket,
 .footer-social ul,
-.sorting-list {
+.sorting-list,
+.filter-grid,
+.filter-specials {
   list-style: none;
 }
 .container {
@@ -367,17 +376,8 @@ img {
     padding-top: 80px;
     background: white;
 }
-.slider {
-   /* height: 413px;*/
-    
-}
-.info {
-    padding-top: 110px;
-    height: 528px;
-    width: 1440px;
-    background: white;
 
-}
+
 .references {
     display: flex;
     flex-direction: row;
@@ -389,12 +389,65 @@ img {
 .references-wrapper {
     background: white;
 }
-.visually-hidden {
+.info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #eeeeee;
+    border-bottom: 2px solid #eeeeee;
+    padding-top: 28px;
+    padding-bottom: 61px;
+}
+.info-slogan {
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 500;
+}
+.info-text {
+    font-size: inherit;
+    line-height: inherit;
+    color: #283136;
+}
+.info-job {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.description-list {
+    list-style: none;
+}
+.description-item {
+    display: block;
+    position: relative;
+}
+.description-item::before {
+    content: "";
     position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+    width: 25px;
+    height: 2px;
+    left: -40px;
+    bottom: 10px;
+
+    background-color: red;
+
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .contacts {
     width: 319px;
@@ -431,7 +484,7 @@ img {
     align-items: center;
     background: white;
 }
-.footer-social ul {
+.social-list {
     display: flex;
     flex-direction: row;
     width: 261px;
@@ -440,16 +493,105 @@ img {
     align-items: center;
     padding-left: 0;
 }
-
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+      
+}
 .shop-title {
      color: #000;
      font-size: 55px;
-     line-height: 55px;
+     line-height: 55pli x;
 
 }
+
 .filter {
     width: 259px;
     height: 510px;
+}
+.filter-name {
+    margin-bottom: 29px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+
+}
+.filter fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+
+}
+.filter-grid,
+.filter-specials {
+    margin: 0;
+    padding: 0;
+}
+.filter-grid-radio + label::before { /* Псевдоэлемент радио кнопки */
+    content: "";
+  
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: -36px;
+    top: -3px;
+  
+    background-image: url("../img/radio-off.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+    opacity: 0.4;
+
+  }
+  .filter-checkbox + label::before { /* Псевдоэлемент чекбокса */
+    content: "";
+  
+    position: absolute;
+    width: 27px;
+    height: 23px;
+    left: -36px;
+    top: -2px;
+  
+    background-image: url("../img/checkbox-off.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+    opacity: 0.4;
+  }
+  .filter-checkbox:checked + label::before { /* Меняем изображение чекбокса*/
+    background-image: url("../img/checkbox-on.svg");
+  }
+  .filter-grid-radio:checked + label::before { /* Меняем изображение радиокнопки */
+    background-image: url("../img/radio-on.svg");
+  }
+  .filter-specials label,
+  .filter-grid label { /* Пункты фильтров */
+    position: relative;
+  
+    display: block;
+  
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #000000;
+  
+    background-color: #ffffff;
+    margin-bottom: 20px;
+  }
+.show-filter {
+display: block;
+position: absolute;
+left: 60px;
+    color: #000;
+    width: 260px;
+    padding: 0;
+    background-color: #eeeeee;
 }
 .items {
     display: flex;
