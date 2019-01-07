@@ -26,12 +26,31 @@ img {
     max-width: 100%;
     height: auto;
 }
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .site-navigation,
 .icon-basket,
 .footer-social ul,
 .sorting-list,
 .filter-grid,
-.filter-specials {
+.filter-specials,
+.basket,
+.pagination-list {
   list-style: none;
 }
 .container {
@@ -39,6 +58,28 @@ img {
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
+}
+.basket {
+    display: flex;
+    justify-content: flex-end;
+    width: 160px;
+}
+.icon-basket {
+    display: block;
+    position: relative;
+}
+.icon-basket::before {
+    content: "";
+
+    position: absolute;
+    top: 5px;
+    left: -27px;
+    width: 15px;
+    height: 15px;
+
+    background-image: url("../img/cart-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 .slider-item {
     display: none;
@@ -92,18 +133,18 @@ img {
 }
 
 .site-navigation a,
-.icon-basket a {
+.icon-basket  {
   color: #000;
   text-transform: uppercase;
 }
 .site-navigation a:hover,
 .site-navigation a:focus,
-.icon-basket a:hover,
-.icon-basket a:focus {
+.icon-basket:hover,
+.icon-basket:focus {
     color: #fb565a;
 }
 .site-navigation a:active,
-.icon-basket a:active {
+.icon-basket:active {
     color: #a6a6a6;
 }
 .site-navigation-current a {
@@ -258,30 +299,59 @@ img {
     color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
 }
-.feedback-form {
+.map-wrapper {
+    position: relative;
+}
+.modal {
     display: none;
-    position: absolute;
+    position: fixed;
     font-size: inherit;
     background-color: #fff;
     box-shadow: 0 0 50px rgba(0,0,0,0.5);
     width: 960px;
     height: 590px;
-    left: 240px;
-    top: 1800px;
+    left: 280px;
+    top: 30px;
+}
+.write {
+    display: block;
+    position: relative;
+    margin: 0;
+	padding-top: 16px;
+	margin-bottom: 26px;
 }
 .feedback-form label{
+    display: block;
     font-size: 16px;
     line-height: 18px;
     font-weight: 700;
     vertical-align: middle;
 }
-.feedback-form input,
+.feedback-form input {
+    border: 2px solid #d7dcde;
+    font-size: inherit;
+    line-height: 18px;
+    color: #a1a1a1;
+    box-sizing: border-box;
+
+	width: 360px;
+	height: 50px;
+
+	padding-left: 14px;
+	border-radius: 4px;
+    opacity: 0.5;
+}
 .feedback-form textarea {
     border: 2px solid #d7dcde;
     font-size: inherit;
     line-height: 18px;
     color: #a1a1a1;
+    box-sizing: border-box;
+    width: 760px;
+    height: 118px;
+    opacity: 0.5;
 }
+
 .contacts-btn,
 .button-submit  {
     background-color: #fb565a;
@@ -324,6 +394,7 @@ img {
 .item-price {
     background: #fb565a;
     width: 200px;
+    margin-top: 31px;
 }
 
 .item-title {
@@ -331,11 +402,72 @@ img {
     line-height: 30px;
     font-weight: bold;
     text-transform: uppercase;
+    margin: 0;
+    padding-top: 35px;
+    padding-bottom: 10px;
 }
 .item-text {
     font-size: 16px;
     line-height: 18px;
     color: #666666;
+    margin: 0;
+
+}
+.pagination-list {
+    padding: 0;
+    margin-top: 27px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.pagination-item {
+    margin-right: 10px;
+}
+.pagination-list a { 
+	display: block;
+	box-sizing: border-box;
+    padding: 10px 18px;
+    font: inherit;
+	font-weight: 500;
+    border: 3px solid #eeeeee;
+	border-radius: 3px;
+    background-color: #eeeeee;
+}
+.pagination-item-current a {
+	background-color: #ffffff;
+	border-color: #dbdbdb;
+}
+.pagination-button {
+    color: #000;
+
+}
+.pagination-list .button {
+    min-width: 260px;
+	color: #000000;
+	height: 50px;
+}
+.pagination-list a:hover,
+.pagination-list a:focus { 
+	background-color: #dfdfdf;
+	border-color: #dfdfdf;
+}
+.pagination-list a:active { 
+	background-color: #d5d5d5;
+	border-color: #d5d5d5;
+	border-top: 3px solid #bfbfbf;
+	color: rgba(0, 0, 0, 0.3);
+}
+.pagination-item-current a:hover,
+.pagination-item-current a:focus { 
+	background-color: #ffffff;
+	border-color: #dbdbdb;
+}
+
+.pagination-item-current a:active { 
+	background-color: #ffffff;
+    border-color: #dbdbdb;
+    color: #000;
 }
 .container-header  {
     display: flex;
@@ -349,9 +481,6 @@ img {
     justify-content: space-between;
     flex-wrap: wrap;
     width: 440px;
-    padding: 0;
-}
-.icon-basket {
     padding: 0;
 }
 .main-navigation {
@@ -381,21 +510,37 @@ img {
 .references {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 1090px;
-    height: 68px;
-    padding: 50px 163px 50px 171px;
+    justify-content: space-around;
+    align-items: center;
+    width: 1160px;
+    height: 90px;
+    padding: 50px 0;
+    border-bottom: 2px solid #eeeeee;
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-bottom: 80px;
 }
-.references-wrapper {
-    background: white;
+.reference-img img {
+    opacity: 0.2;
 }
-.info-wrapper {
+.reference-img img:focus,
+.reference-img img:hover {
+    opacity: 1;
+}
+.reference-img img:active {
+    opacity: 0.1;
+}
+
+.info-wrapper { 
     display: flex;
     justify-content: space-between;
+    width: 1160px;
     border-top: 2px solid #eeeeee;
     border-bottom: 2px solid #eeeeee;
-    padding-top: 28px;
-    padding-bottom: 61px;
+    margin-left: 140px;
+    margin-right: 140px;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 .info-slogan {
     font-size: 45px;
@@ -412,6 +557,8 @@ img {
     line-height: inherit;
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 45px;
+    margin-top: 30px;
 }
 .description-list {
     list-style: none;
@@ -419,6 +566,7 @@ img {
 .description-item {
     display: block;
     position: relative;
+    margin: 12px 0;
 }
 .description-item::before {
     content: "";
@@ -430,24 +578,6 @@ img {
 
     background-color: red;
 
-}
-
-.visually-hidden:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 .contacts {
     width: 319px;
@@ -463,8 +593,8 @@ input[type="radio"].visually-hidden {
 }
 .marker {
     position: absolute;
-    right: 390px;
-    bottom: 140px;
+    right: 375px;
+    bottom: 135px;
 }
 .map-wrapper {
     display: block;
@@ -503,16 +633,102 @@ input[type="radio"].visually-hidden {
     background-color: #e1e1e1;
       
 }
+.social-button:focus,
+.social-button:hover {
+    background-color: #e74246;
+}
+.social-button:active {
+    background-color: #d7373b;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset;
+}
+.social-button svg:active {
+    fill: #e37376;
+}
 .shop-title {
      color: #000;
      font-size: 55px;
      line-height: 55pli x;
 
 }
-
+.sidebar {
+    margin-top: 58px;
+}
 .filter {
     width: 259px;
     height: 510px;
+}
+.range-filter {
+    width: 260px;
+    margin-top: 46px;
+}
+.range-controls {
+    position: relative;
+    height: 41px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 14px;
+    padding-top: 39px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+  .range-controls .scale {
+    height: 2px;
+    background: #d7dcde;
+}
+.range-controls .bar {
+    width: 70%;
+    height: 2px;
+    background: #00ca74;
+}
+.range-controls .toggle {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    padding: 0;
+    border: 8px solid #ffffff;
+    background-color: #ababab;
+    border-radius: 50%;
+    box-shadow: 0 2px 1px 0 #cfcfcf;
+    cursor: pointer;
+  }
+  .range-controls .toggle-min {
+    left: 18px;
+  }
+  
+  .range-controls .toggle-max {
+    left: 160px;
+  }
+  .price-controls label {
+    display: inline-block;
+    width: 50%;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .price-controls {
+    font-size: 0;
+  }
+  .price-controls input {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: #283136;
+    width: 60px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f1f1f1;
+    margin-left: 10px;
+  }
+  .max-price {
+    text-align: right;
+  }
+.filter-item {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 .filter-name {
     margin-bottom: 29px;
@@ -535,7 +751,7 @@ input[type="radio"].visually-hidden {
     margin: 0;
     padding: 0;
 }
-.filter-grid-radio + label::before { /* Псевдоэлемент радио кнопки */
+.filter-grid-radio + label::before { 
     content: "";
   
     position: absolute;
@@ -547,10 +763,19 @@ input[type="radio"].visually-hidden {
     background-image: url("../img/radio-off.svg");
     background-repeat: no-repeat;
     background-position: 0 0 ;
+    cursor: pointer;
     opacity: 0.4;
 
   }
-  .filter-checkbox + label::before { /* Псевдоэлемент чекбокса */
+  .filter-grid-radio:focus + label::before,
+  .filter-grid-radio:hover + label::before {
+    opacity: 1; 
+  }
+  .filter-grid-radio:disabled + label::before {
+      opacity: 0.1;
+  }
+   
+  .filter-checkbox + label::before {
     content: "";
   
     position: absolute;
@@ -562,16 +787,24 @@ input[type="radio"].visually-hidden {
     background-image: url("../img/checkbox-off.svg");
     background-repeat: no-repeat;
     background-position: 0 0 ;
+    cursor: pointer;
     opacity: 0.4;
   }
-  .filter-checkbox:checked + label::before { /* Меняем изображение чекбокса*/
+  .filter-checkbox:focus + label::before,
+  .filter-checkbox:hover + label::before {
+      opacity: 1;
+  }
+  .filter-checkbox:disabled + label::before {
+      opacity: 0.1;
+  }
+  .filter-checkbox:checked + label::before { 
     background-image: url("../img/checkbox-on.svg");
   }
-  .filter-grid-radio:checked + label::before { /* Меняем изображение радиокнопки */
+  .filter-grid-radio:checked + label::before {
     background-image: url("../img/radio-on.svg");
   }
   .filter-specials label,
-  .filter-grid label { /* Пункты фильтров */
+  .filter-grid label { 
     position: relative;
   
     display: block;
@@ -579,19 +812,35 @@ input[type="radio"].visually-hidden {
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    color: #000000;
+    color: #283136;
   
     background-color: #ffffff;
     margin-bottom: 20px;
   }
+.filter-specials label:focus,
+.filter-specials label:hover,
+.filter-grid label:focus,
+.filter-grid label:hover {
+    color: #283136;
+}
 .show-filter {
-display: block;
-position: absolute;
-left: 60px;
+    display: block;
+    position: absolute;
+    left: 60px;
     color: #000;
     width: 260px;
     padding: 0;
     background-color: #eeeeee;
+}
+.show-filter:focus,
+.show-filter:hover {
+    background-color: #dfdfdf;
+}
+.show-filter:active {
+    background-color: #d5d5d5;
+    color: rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 3px 0 0 rgba(0, 1, 1, 0.1);
+
 }
 .items {
     display: flex;
@@ -601,14 +850,37 @@ left: 60px;
 }
 .item-card {
     width: 360px;
-    padding-bottom: 33px;
+    margin-bottom: 33px;
+}
+.item-img-wrapper {
+    position: relative;
+    height: 616px;
+
 }
 .item-description {
-    display: none;
+   display: none;
+   position: absolute;
+   bottom: 7px;
+   width: 360px;
+   height: 231px;
+   background-color: #eeeeee;
+   text-align: center;
+
 }
 .item-header {
     width: 360px;
     height: 40px;
+}
+.item-img-wrapper svg {
+    opacity: 0.12;
+}
+.item-img-wrapper:focus .item-header svg,
+.item-img-wrapper:hover .item-header svg {
+    opacity: 1;
+}
+.item-img-wrapper:focus .item-description,
+.item-img-wrapper:hover .item-description {
+    display: block;
 }
 .container-wrapper {
     display: flex;
@@ -619,18 +891,124 @@ left: 60px;
 .sorting-items-wrapper {
     display: flex;
     flex-direction: column;
+    margin-top: 58px;
 }
 .sorting {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 34px;
 
+}
+.sorting-title {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.sorting-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #b2b2b2;
+}
+.sorting-text:focus,
+.sorting-text:hover {
+    color: #666666;
+}
+.current,
+.sorting-text:active {
+    color: #000;
+}
+.down svg,
+.down svg:active {
+    fill: #000;
+}
+.down svg:focus,
+.down svg:hover,
+.up svg:focus,
+.up svg:hover {
+    fill: #a6a6a6;
 }
 .sorting-list {
     display: flex;
     flex-direction: row;
-    width: 272px;
+    flex-wrap: wrap; 
+    width: 360px;
     justify-content: space-between;
-    padding-left: 0px;
+    padding-left: 0;
+    margin-top: 0;
+}
+.sorting-list li:nth-child(3) {
+    padding-right: 30px;
+}
+.stats caption {  /* стили для заголовка таблицы */
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  .stats img { /* отступ у Логотипа нёрдс */
+	margin-top: 11px;
+	margin-bottom: 29px;
+}
 
+.stats table { /* стили для таблицы */
+	border-collapse: collapse;
+
+	width: 360px;
+
+	padding: 0;
+	margin: 0;
+}
+
+.stats th { /* стили для ячейки-заголовка */
+	font-size: 45px;
+	line-height: 45px;
+	font-weight: 700;
+	text-align: left;
+}
+
+.stats td {  /* стили для ячейки */
+	font-size: 16px;
+	line-height: 18px;
+	text-align: left;
+
+	width: 125px;
+	padding-top: 17px;
+}
+
+.stats span { /* стили для значка "%" */
+	font-size: 26px;
+	vertical-align: super;
+}
+.col {
+    position: relative;
+}
+.col:nth-child(1)::before {
+    content: "";
+	position: absolute;
+    width: 2px;
+	height: 52px;
+    top: 10px;
+	right: -50px;
+    background-color: #eeeeee;
+}
+.col:nth-child(2)::before {
+    content: "";
+	position: absolute;
+    width: 2px;
+	height: 52px;
+    top: 20px;
+	right: -50px;
+    background-color: #eeeeee;
+}
+.col:nth-child(3)::before {
+content: "";
+	position: absolute;
+    width: 2px;
+	height: 52px;
+    top: 1px;
+	right: -50px;
+    background-color: #eeeeee;
 }
