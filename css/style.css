@@ -303,11 +303,11 @@ input[type="radio"].visually-hidden {
     position: relative;
 }
 .modal {
-    display: none;
+   /* display: none;*/
     position: fixed;
     font-size: inherit;
     background-color: #fff;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 70px 0 #000000;
     width: 960px;
     height: 590px;
     left: 280px;
@@ -315,10 +315,26 @@ input[type="radio"].visually-hidden {
 }
 .write {
     display: block;
-    position: relative;
     margin: 0;
-	padding-top: 16px;
-	margin-bottom: 26px;
+    font-size: 45px;
+    line-height: 45px;
+	padding-top: 72px;
+	padding-left: 100px;
+}
+.feedback-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px 100px 0 100px;
+}
+.name {
+    margin: 0 40px 0 0;
+}
+.e-mail {
+    margin: 0;
+}
+.message-text {
+    margin: 37px 0 47px 0;
 }
 .feedback-form label{
     display: block;
@@ -326,6 +342,7 @@ input[type="radio"].visually-hidden {
     line-height: 18px;
     font-weight: 700;
     vertical-align: middle;
+    margin-bottom: 12px;
 }
 .feedback-form input {
     border: 2px solid #d7dcde;
@@ -351,13 +368,53 @@ input[type="radio"].visually-hidden {
     height: 118px;
     opacity: 0.5;
 }
+.modal-close { 
+	position: absolute;
+    top: 77px;
+	right: 90px;
+	list-style: none;
+	width: 21px;
+	height: 21px;
 
+	background-color: transparent;
+	opacity: 0.3;
+	border: none;
+	font-size: 0;
+
+	background-image: url("../img/close-cross.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+.modal-close:focus,
+.modal-close:hover {
+    opacity: 1;
+    outline: none;
+}
+.modal-close:active {
+    opacity: 0.1;
+    outline: none;
+}
 .contacts-btn,
 .button-submit  {
     background-color: #fb565a;
     white-space: nowrap;
     overflow: hidden;
-
+    
+}
+.button-submit {
+    width: 260px;
+}
+.name input:focus,
+.e-mail input:focus,
+.message-text textarea:focus {
+    border-color: #000;
+    outline: none;
+} 
+.name input:hover,
+.e-mail input:hover,
+.message-text textarea:hover {
+    border-color: #b4b9bb;
+    outline: none;
 }
 .item-header svg:hover,
 .item-header svg:focus {
@@ -943,17 +1000,17 @@ input[type="radio"].visually-hidden {
 .sorting-list li:nth-child(3) {
     padding-right: 30px;
 }
-.stats caption {  /* стили для заголовка таблицы */
+.stats caption {  
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 30px;
   }
-  .stats img { /* отступ у Логотипа нёрдс */
+  .stats img { 
 	margin-top: 11px;
 	margin-bottom: 29px;
 }
 
-.stats table { /* стили для таблицы */
+.stats table {
 	border-collapse: collapse;
 
 	width: 360px;
@@ -962,14 +1019,14 @@ input[type="radio"].visually-hidden {
 	margin: 0;
 }
 
-.stats th { /* стили для ячейки-заголовка */
+.stats th { 
 	font-size: 45px;
 	line-height: 45px;
 	font-weight: 700;
 	text-align: left;
 }
 
-.stats td {  /* стили для ячейки */
+.stats td {  
 	font-size: 16px;
 	line-height: 18px;
 	text-align: left;
@@ -978,7 +1035,7 @@ input[type="radio"].visually-hidden {
 	padding-top: 17px;
 }
 
-.stats span { /* стили для значка "%" */
+.stats span {
 	font-size: 26px;
 	vertical-align: super;
 }
