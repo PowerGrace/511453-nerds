@@ -386,7 +386,6 @@ input[type="radio"].visually-hidden {
     border: 2px solid #d7dcde;
     font-size: inherit;
     line-height: 18px;
-    color: #a1a1a1;
     box-sizing: border-box;
 
 	width: 360px;
@@ -400,7 +399,6 @@ input[type="radio"].visually-hidden {
     border: 2px solid #d7dcde;
     font-size: inherit;
     line-height: 18px;
-    color: #a1a1a1;
     box-sizing: border-box;
     width: 760px;
     height: 118px;
@@ -442,19 +440,18 @@ input[type="radio"].visually-hidden {
 .button-submit {
     width: 260px;
 }
-input[name=feedback-name]:focus,
-input[name=feedback-e-mail]:focus,
-textarea[name="feedback-message"]:focus {
+.feedback-form input:focus,
+.feedback-form textarea:focus {
     border-color: #000;
-    outline: none;
+    outline-color: transparent;
+    opacity: 1;
 }
-input[name=feedback-name]:hover,
-input[name=feedback-e-mail]:hover,
-textarea[name="feedback-message"]:hover {
+.feedback-form input:hover,
+.feedback-form textarea:hover {
     border-color: #b4b9bb;
-    outline: none;
 }
-.name input:invalid { 
+input:invalid,
+textarea:invalid { 
     border-color: #e74246;
     color: #e74246;
 }
